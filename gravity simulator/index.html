@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- Force HTTPS -->
+
+    <script>window.location.href.match("https") || (window.location.href = window.location.href.replace("http", "https"));</script>
+
+    <!-- Metadata -->
+
+    <meta charset="utf-8">
+    <meta name="description" content="A simple gravity simulator">
+    <meta name="viewport" content="width = device-width">
+
+    <title>Gravity Simulator</title>
+    <link href="images/gravity-simulator.png" rel="icon">
+    <link href="style.css" rel="stylesheet">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gravity Simulator">
+    <meta property="og:description" content="A simple gravity simulator">
+    <meta property="og:image" content="https://gravity-simulator.mreconomical.repl.co/images/gravity-simulator.png">
+
+    <!--
+            Font Awesome Free 5.12.0 by @fontawesome - https://fontawesome.com
+            License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+        -->
+
+    <link href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Data and scripts -->
+
+    <script src="config.js"></script>
+    <script src="methods.js"></script>
+    <script src="control.js"></script>
+    <script src="sim.js"></script>
+    <script src="main.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Description -->
+
+    <div id="desc">
+
+        <div id="title">Gravity Simulator</div>
+        <br>
+        
+
+    </div>
+
+    <!-- Controls -->
+
+    <div id="toggle-control" title="Toggle Controls">
+
+        <i class="fas fa-bars" id="control-bars"></i>
+
+    </div>
+
+    <div class="controlsActive" id="controls">
+
+        <div class="control" id="gravity-spot-control" title="Gravity Spot (Hotkey G)">
+
+            <div class="controlIcon objectIcon" id="gravity-spot-icon"></div>
+
+        </div>
+
+        <div class="control" id="object-control" title="Object (Hotkey O)">
+
+            <div class="controlIcon objectIcon" id="object-icon"></div>
+
+        </div>
+
+        <div class="control" id="delete-control" title="Delete (Hotkey X)">
+
+            <i class="controlIcon fas fa-times"></i>
+
+        </div>
+
+        <div class="control" id="clear-control" title="Clear">
+
+            <i class="controlIcon fas fa-trash-alt"></i>
+
+        </div>
+
+        <div class="control" id="settings-control" title="Settings">
+
+            <i class="controlIcon fas fa-cog"></i>
+
+        </div>
+
+        <div class="settingsHidden" id="settings">
+
+            Gravity Spot Placement Mass
+            <input class="settingsSlider" id="gravity-spot-slider" type="range" min="6" max="8" value="7"
+                step="0.05"></input>
+            <div class="sliderValue" id="gravity-spot-value">3.00e+7</div>
+            <button class="sliderReset" id="gravity-spot-reset">Reset</button>
+
+            Object Placement Mass
+            <input class="settingsSlider" id="object-slider" type="range" min="2" max="4" value="3" step="0.05"></input>
+            <div class="sliderValue" id="object-value">1.60e+3</div>
+            <button class="sliderReset" id="object-reset">Reset</button>
+
+            Gravity Strength
+            <input class="settingsSlider" id="gravity-slider" type="range" min="-12" max="-10" value="-11"
+                step="0.05"></input>
+            <div class="sliderValue" id="gravity-value">6.67e-11</div>
+            <button class="sliderReset" id="gravity-reset">Reset</button>
+
+            Tick Warp
+
+            <div id="tick-warp">
+
+                <input id="warp-input" type="text" maxlength="5"></input>
+                <button id="warp">Warp</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Simulation canvas -->
+
+    <canvas class="canvas" id="sim"></canvas>
+
+    <!-- Control canvas -->
+
+    <canvas class="canvas" id="control"></canvas>
+
+</body>
+
+</html>
