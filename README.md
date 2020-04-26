@@ -1,2 +1,1 @@
-# Mini-Projects
-## 1. Gravity simulator 
+# Gravity simulator
